@@ -1,0 +1,88 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Speedways Electric</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/uistyle.css' %}">
+    <!-- <script>
+        document.getElementById("contact-submit").addEventListener("click", myFunction);
+
+       /*  function myFunction() {
+            var div = document.getElementById(demo);
+            if (div.style.display == 'none') {
+                div.style.display = '';
+                }
+            else {
+                div.style.display = 'none';
+            }
+        } */
+    </script>   -->
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="HandheldFriendly" content="true">
+</head>
+<body>
+
+<div class="container" id ="cont">
+  <form id="contact" method="post">
+      {% csrf_token %}
+
+    <h3>Map Generation</h3>
+    <h4>Enter the following information</h4>
+      {{ form }}
+   <!-- <fieldset>
+      <input placeholder="Number of nodes" type="text" tabindex="1" required autofocus>
+    </fieldset>
+    <fieldset>
+      <input placeholder="No of stations station" type="text" tabindex="2" required>
+    </fieldset>-->
+    <fieldset>
+      <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
+    </fieldset>
+  </form>
+</div>
+<!-- <div id="demo">
+<div class="container">
+    <form id="contact" action="" method="post">
+      <h3>Map Generation</h3>
+      <h4>Enter the following information</h4>
+      <fieldset>
+        <input placeholder="Current Node" type="text" tabindex="1" required autofocus>
+      </fieldset>
+      <fieldset>
+        <input placeholder="Left node or station" type="text" tabindex="2" required>
+      </fieldset>
+      <fieldset>
+        <input placeholder="Distance between current node and left node" type="text" tabindex="3" required>
+      </fieldset>
+      <fieldset>
+        <input placeholder="right node or station" type="text" tabindex="4" required>
+      </fieldset>
+      <fieldset>
+        <input placeholder="Distance between current node and right node" type="text" tabindex="5" required>
+      </fieldset>
+      <fieldset>
+        <input placeholder="Straight node or station" type="text" tabindex="6" required>
+      </fieldset>
+      <fieldset>
+        <input placeholder="Distance between current node and straight node" type="text" tabindex="7" required>
+      </fieldset>
+      <fieldset>
+        <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
+      </fieldset>
+    </form>
+  </div>
+</div> -->
+
+<script>
+    $(document).ready(function () {
+        $("#contact-submit").click(function (e) {
+            $("#cont").append(' <h3>Map Generation</h3>\n' +
+                '    <h4>Enter the following information</h4>');
+        });
+    });
+</script>
+<script src="{% static 'js/jquery-1.7.1.min.js' %}"></script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Speedways Electric</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/agvlist.css' %}">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="HandheldFriendly" content="true">
+
+</head>
+<body>
+<div class="container" >
+    <h3> AGV Details</h3>
+   <br>
+      <fieldset>
+
+          <table><ol>
+              <tr class="thead">
+        <td class="tabledata"> AGV Name</td>
+              <td class="tabledata"> Battery </td>
+              <td class="cdata"> Current Status</td>
+        </tr>
+              {% for ab in mylist %}
+            <tr><td class="tabledata"><li>{{ab.0}}</li></td>
+                <td class="tabledata"> 100% </td>
+                <td class="cdata"> {{ab.1}}</td>
+            </tr>
+              {% endfor %}
+
+          </ol>
+              </table>
+      </fieldset>
+</div>
+<div class="container" >
+<table>
+
+    <tr>
+        <td class="count1">
+            Total Number of AGVs
+        </td>
+        <td class="count2">
+            Number of AGVs Down
+        </td>
+    </tr>
+    <tr>
+        <td class="cnt">
+            10
+        </td>
+        <td class="cnt">
+            20
+        </td>
+    </tr>
+    <tr colspan="2"></tr>
+    <tr>
+        <td colspan="2" class="tol">
+        Number of Active AGVs
+        </td>
+    </tr>
+
+    <tr>
+        <td colspan="2" class="tl"> 50 </td>
+    </tr>
+</table>
+</div>
+
+
+</body>
+</html>

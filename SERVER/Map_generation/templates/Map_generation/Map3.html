@@ -1,0 +1,71 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Speedways Electric</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/map2style.css' %}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="HandheldFriendly" content="true">
+<script>
+$(document).ready(function(){
+    $("#listagv").hide();
+  $("#viewlist").click(function(){
+    $("#listagv").show();
+  });
+});
+</script>
+
+
+</head>
+<body>
+<div class="container" id ="cont">
+    <h3> Enter the starting station and ending station</h3>
+    <form id="contact" method="post" action="{% url 'shortest_dist' %}">
+
+      {% csrf_token %}
+        <fieldset>
+        <button style="background-color: green; color: #fff" name="startb" type="submit" id="startb"> Start server</button>
+            </fieldset>
+        <fieldset>
+             <button style="background-color: darkred; color: #fff" name="stop" type="submit" id="stop"> Stop server</button>
+      </fieldset>
+    {% if s == 1 %}
+       <p>Server is running</p>
+       {% else %}
+       <p>Server is not running</p>
+    {% endif %}
+
+        <fieldset>
+          <input placeholder="Starting Station" type="text" tabindex="1" autofocus name = "start">
+      </fieldset>
+      <fieldset>
+        <input placeholder="Destination station" type="text" tabindex="2" name = "dest">
+      </fieldset>
+    <fieldset>
+        <button style="background-color: green; color: #fff" name="autoassign" type="submit" id="autoassign"> Auto Assign</button>
+    </fieldset>
+    <fieldset>
+        <button style="background-color: green; color: #fff" name="viewlist" type="button" id="viewlist" onclick="myFunction()">Select an AGV</button>
+    </fieldset>
+      <fieldset id="listagv">
+        <label for="agvlist">Choose an AGV:</label>
+          <select id="agvlist" name="agvlist" >
+             {% for o in status_list %}
+
+            <option value="{{o}}">{{o}}</option>
+              {% endfor %}
+          </select>
+        </fieldset>
+
+        <fieldset>
+        <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
+      </fieldset>
+
+    </form>
+</div>
+
+</body>
+</html>

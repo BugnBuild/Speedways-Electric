@@ -1,0 +1,25 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Speedways Electric</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/map2style.css' %}">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="HandheldFriendly" content="true">
+
+</head>
+<body>
+<div class="container" id ="cont">
+    <h3> Assign tasks to requested AGV</h3>
+ <form id="contact" method="post" action="{% url 'agvreq' %}">
+      {% csrf_token %}
+    <fieldset>
+        <input type="hidden" name = "tot" value="xyz">
+        <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Assign task to requested AGV</button>
+      </fieldset>
+  </form>
+</div>
+</body>
+</html>

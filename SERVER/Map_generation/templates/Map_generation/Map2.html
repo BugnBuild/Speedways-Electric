@@ -1,0 +1,54 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Speedways Electric</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/map2style.css' %}">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="HandheldFriendly" content="true">
+</head>
+<body>
+<div class="container" id ="cont">
+
+  <form id="contact" method="post" action="{% url 'node_detail_save' %}">
+
+      {% csrf_token %}
+      <fieldset>
+        <input type="hidden" name = "tot" value="{{tot}}">
+        <input placeholder="Current Node" type="text" tabindex="1" required autofocus name = "current">
+      </fieldset>
+      <fieldset>
+        <input placeholder="Left node or station" type="text" tabindex="2" required name = "left">
+      </fieldset>
+      <fieldset>
+        <input placeholder="Distance between current node and left node" type="text" tabindex="3" required name="ldist">
+      </fieldset>
+      <fieldset>
+        <input placeholder="right node or station" type="text" tabindex="4" required name = "right">
+      </fieldset>
+      <fieldset>
+        <input placeholder="Distance between current node and right node" type="text" tabindex="5" required name = "rdist">
+      </fieldset>
+      <fieldset>
+        <input placeholder="Straight node or station" type="text" tabindex="6" required name="straight">
+      </fieldset>
+      <fieldset>
+        <input placeholder="Distance between current node and straight node" type="text" tabindex="7" required name="sdist">
+      </fieldset>
+      <fieldset>
+        <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
+      </fieldset>
+  </form>
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+
+

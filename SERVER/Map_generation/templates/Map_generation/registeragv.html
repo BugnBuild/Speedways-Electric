@@ -1,0 +1,49 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Speedways Electric</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/map2style.css' %}">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="HandheldFriendly" content="true">
+</head>
+<body>
+<div class="container" id ="cont">
+    <h3>Register an AGV</h3>
+
+  <form id="contact" method="post" action="{% url 'regagv' %}">
+
+      {% csrf_token %}
+      <fieldset>
+        <input placeholder="Give a name to AGV" type="text" tabindex="2" required name = "agvsname">
+      </fieldset>
+
+      <fieldset id="listagv">
+        <label for="agvlist">Choose an AGV ID:</label>
+          <select id="agvlist" name="agvsid" >
+             {% for o in ar %}
+
+            <option value="{{o}}">{{o}}</option>
+              {% endfor %}
+              {% comment %}<option value="AG1"> AGV1</option>
+              <option value="AG2"> AGV1</option>
+              <option value="AG3"> AGV1</option>{% endcomment %}
+          </select>
+        </fieldset>
+      <fieldset>
+        <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
+      </fieldset>
+  </form>
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+
+

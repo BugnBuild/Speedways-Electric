@@ -1,0 +1,116 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+
+    <title>Speedways Electric</title>
+
+    <!-- Bootstrap core CSS -->
+    <link  rel="stylesheet" href="{% static 'css/bootstrap.css' %}"  type="text/css">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/normalize.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/component.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/custom-styles.css' %}">
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="HandheldFriendly" content="true">
+     
+	 <link rel="stylesheet" type="text/css" href="{% static 'css/demo.css' %}">
+ 
+  </head>
+
+  <body>
+    <div class="header-wrapper">
+      <div class="site-name">
+        <h1>Speedways Electric</h1>
+        <h2>IF YOU CAN DREAM IT, WE CAN MAKE IT</h2>
+      </div>
+    </div>
+    
+
+
+  
+  <!-- Wrapper for slides -->
+        <div class="carousel-inner">
+          
+            <img src="{% static 'img/banner-image.jpg' %}" alt="" class = "bnr">
+          
+            <div class="carousel-caption">
+              <h1>AGV </h1>
+              <h2></h2>
+            
+          </div>
+         
+    </div>
+    <div class="container">
+      <div class="featured-block">
+        <!-- Example row of columns -->
+        <div class="row" style="align-self: start;">
+          <div class="col-md-3">
+            <div class="block">
+            <div class="thumbnail">
+              <img src="{% static 'img/img1.jpg' %}" alt="" class="img-responsive">
+              <div class="caption">
+                  <a class="btn" href="generate_map">Generate map</a>
+              </div>
+              </div>
+            </div>
+            </div>
+            <div class="col-md-3">
+              <div class="block">
+                <div class="thumbnail">
+                    <img src="{% static 'img/status.png' %}" alt="" class="img-responsive">
+                    <div class="caption">
+                      <a class="btn" href="agvstat">Status of AGVs</a>
+                    </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="block">
+                <div class="thumbnail">
+                  <img src="{% static 'img/img3.png' %}" alt="" class="img-responsive">
+                  <div class="caption">
+                    <a class="btn" href="shortest_dist">Assign tasks to AGV</a>
+                  </div>
+                  </div>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="block">
+                <div class="thumbnail">
+                    <img src="{% static 'img/img4.png' %}" alt="" class="img-responsive">
+                    <div class="caption">
+                      <a class="btn" href="agvreq">View requests from AGVs</a>
+                    </div>
+                </div>
+              </div>
+            </div>
+        </div>
+      </div>
+
+      <div class="featured-block" style="padding-bottom: 55px">
+          <div class="row" style="align-self: start;">
+            <div class="col-md-3">
+              <div class="block">
+                <div class="thumbnail">
+                    <img src="{% static 'img/reg.png' %}" alt="" class="img-responsive">
+                    <div class="caption">
+                      <a class="btn" href="regagv">Register a new AGV</a>
+                    </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+        </div> 
+        <div class="ruler"></div>  
+        </div>
+       
+      
+
+
+    
+    
+  </body>
+</html>
